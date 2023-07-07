@@ -1,0 +1,66 @@
+@use "./mixins" as *;
+
+.guess-title {
+  color: white;
+  margin-top: 100px;
+  width: max-content;
+  margin-bottom: 30px;
+  margin-inline: auto;
+}
+
+.country-image {
+  width: 300px;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 50px;
+
+  @include bp(t) {
+    width: 500px;
+  }
+}
+
+.buttons {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+
+  @include bp(ts) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  button {
+    all: unset;
+    cursor: pointer;
+    font-size: 20px;
+    appearance: none;
+    background: white;
+    padding: 15px 20px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    @include transitions(box-shadow);
+
+    &.wrong {
+      animation: shake 0.4s ease-in-out forwards;
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  75% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

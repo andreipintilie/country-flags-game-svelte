@@ -1,0 +1,37 @@
+.loading-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 1);
+
+  .loading {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inner-loading {
+    height: 75%;
+    width: 75%;
+    border: 15px dotted black;
+    border-style: solid double;
+    border-radius: 100%;
+    animation: rotate 2s infinite forwards;
+  }
+
+  @keyframes rotate {
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

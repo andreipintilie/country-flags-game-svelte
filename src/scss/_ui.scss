@@ -2,20 +2,30 @@
 
 .guess-title {
   color: white;
-  margin-top: 100px;
+  margin-top: 50px;
   width: max-content;
   margin-bottom: 30px;
   margin-inline: auto;
+
+  @include bp(t) {
+    margin-top: 100px;
+  }
 }
 
 .country-image {
   width: 300px;
+  height: 300px;
+  height: auto;
   display: block;
+  object-fit: cover;
   margin-inline: auto;
   margin-bottom: 50px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 
   @include bp(t) {
     width: 500px;
+    height: 350px;
   }
 }
 

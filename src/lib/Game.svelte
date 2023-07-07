@@ -1,9 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import score from "../store";
-  import App from "../App.svelte";
 
-  let options = [];
+  let options: Array<any> = [];
   let currentCountry;
   let clickedButton: HTMLElement;
 
@@ -37,7 +36,6 @@
   const checkCountry = async (name) => {
     if (name === currentCountry.name.common) {
         options = [];
-        currentCountry = null;
         score.update((s) => s + 1);
         getCountry();
     } else {
@@ -53,8 +51,9 @@
 <div class="container">
   {#if currentCountry}
     <h1 class="guess-title">Guess the country</h1>
+
     <img
-      src={`https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/${currentCountry.cca2.toLowerCase()}.svg`}
+      src={currentCountry.flags.svg}
       alt={currentCountry.cca2}
       class="country-image"
     />

@@ -7,7 +7,7 @@
   z-index: 5;
   display: grid;
   place-items: center;
-  background-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(270deg, #530e19, #a61c32);
 
   .loading {
     height: 300px;
@@ -20,7 +20,7 @@
   .inner-loading {
     height: 75%;
     width: 75%;
-    border: 15px dotted black;
+    border: 15px dotted white;
     border-style: solid double;
     border-radius: 100%;
     animation: rotate 2s infinite forwards;

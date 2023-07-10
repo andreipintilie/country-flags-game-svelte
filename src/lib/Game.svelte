@@ -1,24 +1,25 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import score from "../store";
+  import { shuffleArray } from "../utils";
+
+  import CountryInfo from "./CountryInfo.svelte";
+
+  import score from "../store.ts";
 
   let options: Array<any> = [];
   let currentCountry;
+  let onAnimate: boolean = false;
   let clickedButton: HTMLElement;
+  let countries: Array<any> = [];
+  let showCountryData: boolean = false;
 
   onMount(async () => await getCountry())
 
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
   const getCountry = async () => {
-    const response = await fetch('https://restcountries.com/v3.1/all');
-    const countries = await response.json();
+    if (countries.length === 0) {
+      const response = await fetch('https://restcountries.com/v3.1/all');
+      countries = await response.json();
+    }
 
     const randomIndex = Math.floor(Math.random() * countries.length);
     currentCountry = countries[randomIndex];
@@ -34,17 +35,27 @@
   }
 
   const checkCountry = async (name) => {
+    if (onAnimate === true) return;
+
     if (name === currentCountry.name.common) {
-        options = [];
         score.update((s) => s + 1);
-        getCountry();
+        showCountryData = true;
+        
     } else {
+        onAnimate = true;
         clickedButton.classList.add('wrong')
 
         setTimeout(() => {
+            onAnimate = false;
             clickedButton.removeAttribute('class');
-        }, 500);
+        }, 600);
     }
+  }
+
+  const nextCountry = () => {
+    options = [];
+    getCountry();
+    showCountryData = false;
   }
 </script>
 
@@ -68,6 +79,10 @@
         }}>{option.name.common}</button>
       {/each}
     </div>
+
+    {#if showCountryData}
+      <CountryInfo country={currentCountry} on:nextCountry={nextCountry} />
+    {/if}
   {:else}
     <div class="loading-wrapper">
       <div class="loading">

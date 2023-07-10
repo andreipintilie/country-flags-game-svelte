@@ -1,47 +1,58 @@
-# Svelte + TS + Vite
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SCSS](https://img.shields.io/badge/SCSS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Svelte](https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00)
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+# Country Flags Trivia
 
-## Recommended IDE Setup
+A simple trivia game where you guess the country based on its flag.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Technologies Used
 
-## Need an official Svelte framework?
+- Svelte: A JavaScript framework for building user interfaces.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- HTML: The standard markup language for creating web pages.
+- CSS: A stylesheet language used for describing the presentation of a document written in HTML.
+- REST Countries API: A free API to get information about countries.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## How to Play
 
-## Technical considerations
+1. Click the "Play" button on the main menu to start the game.
+2. A flag of a country will be displayed, along with four options.
+3. Choose the correct country by clicking on one of the options.
+4. If you guess correctly, your score will increase and the country's information will be shown.
+5. If you guess incorrectly, the wrong answer will be highlighted briefly.
+6. Click "Next" to move to the next country.
+7. Keep playing and see how many countries you can correctly identify!
 
-**Why use this over SvelteKit?**
+## Installation and Usage
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+1. Clone the repository:
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+```shell
+git clone https://github.com/andreipintilie/country-flags-game-svelte.git
 ```
+
+2. Navigate to the project directory:
+
+```shell
+cd country-flags-trivia
+```
+
+3. Install the dependencies:
+
+```shell
+npm install
+```
+
+4. Start the development server:
+
+```shell
+npm run dev
+```
+
+## Images
+
+![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/614b5858-dfc7-4b43-a680-a1efe4176e68)
+![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/a73be9d3-3f4c-4a29-a33d-6d886a08fcd2)
+![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/c260cc3c-b041-41aa-9c41-97be24489a4c)

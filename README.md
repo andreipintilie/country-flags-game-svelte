@@ -54,5 +54,5 @@ npm run dev
 ## Images
 
 ![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/1c1f0901-c62d-48c9-991b-06b81866a704)
-![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/a73be9d3-3f4c-4a29-a33d-6d886a08fcd2)
-![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/c260cc3c-b041-41aa-9c41-97be24489a4c)
+![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/7dc7bcb9-53bb-40bc-9e6a-31abcbef7b44)
+![image](https://github.com/andreipintilie/country-flags-game-svelte/assets/59415893/141c6729-9b87-47cd-b66d-bd92ba674384)
